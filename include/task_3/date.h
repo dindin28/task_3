@@ -25,7 +25,7 @@ public:
   bool IsYearLeap();
   static bool IsYearLeap(int year);
 
-  void Print();
+  virtual void Print();
 
   friend std::ostream &operator<<(std::ostream &out, const Date &obj);
   friend std::istream &operator>>(std::istream &in, Date &obj);

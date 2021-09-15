@@ -12,7 +12,7 @@ public:
   Participant(const char *name, const char *surname, const Date &date);
   Participant(const Participant &copy);
   Participant &operator=(const Participant &copy);
-  ~Participant();
+  virtual ~Participant();
 
   //Getters
   const char *GetName() const;
@@ -24,7 +24,7 @@ public:
   Participant &SetSurname(const char *surname);
   Participant &SetDate(const Date &date);
 
-  void Print();
+  virtual void Print();
 
   friend std::ostream &operator<<(std::ostream &out, const Participant &obj);
   friend std::istream &operator>>(std::istream &in, Participant &obj);

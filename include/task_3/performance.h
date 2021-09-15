@@ -25,7 +25,7 @@ public:
   Performance &SetSequenceNumber(int sequence_number);
   Performance &SetResult(int result);
 
-  void Print();
+  virtual void Print();
 
   friend std::ostream &operator<<(std::ostream &out, const Performance &obj);
   friend std::istream &operator>>(std::istream &in, Performance &obj);

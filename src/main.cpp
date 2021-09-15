@@ -50,5 +50,14 @@ int main()
   std::cout << "There are 3 diffrent performances in Competition: " << std::endl;
   std::cout << competition << std::endl;
   std::cout << "competition[1] = " << competition[1] << std::endl;
+  std::cout << std::endl;
+
+  Competition com_ptr;
+  Participant *a = &com_ptr;
+  std::cout << "Participant class is parent for Competition class" << std::endl;
+  std::cout << "We have virtual Print() function: " << std::endl;
+  std::cout << "Participant a* = &(Competition class), a->Print(): " << std::endl;
+  a->Print();
+  std::cout << std::endl;
   return 0;
 }

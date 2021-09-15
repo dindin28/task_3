@@ -13,15 +13,15 @@ public:
   Competition(const char *name, Performance *performance_pointer, int performance_size, const char *par_name, const char *par_surname, const Date &par_date);
   Competition(const Competition &copy);
   Competition &operator=(const Competition &copy);
-  ~Competition();
+  virtual ~Competition();
 
   void AddPerformance(const Performance &performance);
 
   const char *GetCompetitionName() const;
   Competition &SetCompetitionName(const char *name);
 
-  void Print();
-  void PrintShortly();
+  virtual void Print();
+  virtual void PrintShortly();
 
   friend std::ostream &operator<<(std::ostream &out, const Competition &obj);
   friend std::istream &operator>>(std::istream &in, Competition &obj);
