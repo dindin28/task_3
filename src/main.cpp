@@ -1,55 +1,63 @@
 // This is a personal academic project. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
 
-#include <task_4/uses_priority_queue.hpp>
-
-#include <functional>
+#include <task_3/date.h>
+#include <task_3/participant.h>
+#include <task_3/performance.h>
+#include <task_3/competition.h>
 
 #include <iostream>
 
-template <typename T, class Compare = std::less<T>>
-void QueueDemonstration()
-{
-  int ch = -1;
-  uses_priority_queue<T, Compare> queue;
-  while (ch != 0)
-  {
-    do
-    {
-      std::system("clear");
-      for (int i = 0; i < queue.size(); i++)
-      {
-        std::cout << i + 1 << ") " << queue[i] << std::endl;
-      }
-      std::cout << "uses_priority_queue::empty(): " << (queue.empty() ? "true" : "false") << std::endl;
-      std::cout << "uses_priority_queue::size(): " << queue.size() << std::endl;
-      std::cout << std::endl;
-      std::cout << "1)push()" << std::endl;
-      std::cout << "2)pop()" << std::endl;
-      std::cout << "0)exit" << std::endl;
-      std::cin >> ch;
-    } while (ch != 0 && ch != 1 && ch != 2);
-    switch (ch)
-    {
-    case (1):
-    {
-      std::cout << "Enter new value: ";
-      T variable;
-      std::cin >> variable;
-      queue.push(variable);
-      break;
-    }
-    case (2):
-    {
-      queue.pop();
-      break;
-    }
-    }
-  }
-}
-
 int main()
 {
-  QueueDemonstration<int>();
+  Date date_a(28, 2, 2020);
+  Date date_b(1, 0, 0);
+  std::cout << "Year is leap, has 29 of Fabruary: " << date_a << std::endl;
+  std::cout << "Just date with one day: " << date_b << std::endl;
+  std::cout << "Sum is " << (date_a + date_b) << std::endl;
+  std::cout << std::endl;
+
+  date_a.SetYear(2021);
+  std::cout << "Set first date with no leap year: " << date_a << std::endl;
+  std::cout << "Now sum is " << (date_a + date_b) << std::endl;
+  std::cout << std::endl;
+
+  Performance per_a;
+  Performance per_b;
+  std::cout << "There is no diffrence between two performances: " << std::endl;
+  std::cout << "First performance: " << per_a << std::endl;
+  std::cout << "Second performance: " << per_b << std::endl;
+  std::cout << "per_a > per_b: " << (per_a > per_b) << std::endl;
+  std::cout << "per_a < per_b: " << (per_a > per_b) << std::endl; // Compared by result
+  std::cout << std::endl;
+
+  Participant par_a;
+  Participant par_b;
+  par_a.SetName("Oleh");
+  std::cout << "Diffrence between two participants is name: " << std::endl;
+  std::cout << "First participant: " << par_a << std::endl;
+  std::cout << "Second participant: " << par_b << std::endl;
+  std::cout << "par_a == par_b: " << (par_a == par_b) << std::endl;
+  std::cout << "par_a != par_b: " << (par_a != par_b) << std::endl;
+  std::cout << std::endl;
+
+  Competition competition;
+  competition.AddPerformance(per_a);
+  per_a.SetResult(101);
+  competition.AddPerformance(per_a);
+  per_a.SetResult(102);
+  competition.AddPerformance(per_a);
+  std::cout << "There are 3 diffrent performances in Competition: " << std::endl;
+  std::cout << competition << std::endl;
+  std::cout << "competition[1] = " << competition[1] << std::endl;
+  std::cout << std::endl;
+
+  Competition com_ptr;
+  Participant *a = &com_ptr;
+  std::cout << "Participant class is parent for Competition class" << std::endl;
+  std::cout << "We have virtual Print() function: " << std::endl;
+  std::cout << "Participant a* = &(Competition class), a->Print(): " << std::endl;
+  a->Print();
+  std::cout << std::endl;
   return 0;
 }
