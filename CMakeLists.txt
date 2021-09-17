@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(task_3)
+project(task_4)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 #========================
@@ -43,7 +43,7 @@ target_include_directories(
 
 if(ANALYZE)
   include(PVS-Studio.cmake)
-  pvs_studio_add_target(TARGET example1.analyze ALL
+  pvs_studio_add_target(TARGET analyze.target ALL
                         OUTPUT FORMAT errorfile
                         ANALYZE ${PROJECT_NAME}
                         MODE GA:1,2

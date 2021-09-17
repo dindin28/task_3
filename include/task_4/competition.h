@@ -1,8 +1,8 @@
-#ifndef _TASK_3_INCLUDE_TASK_3_COMPETITION_H_
-#define _TASK_3_INCLUDE_TASK_3_COMPETITION_H_
+#ifndef _TASK_4_INCLUDE_TASK_4_COMPETITION_H_
+#define _TASK_4_INCLUDE_TASK_4_COMPETITION_H_
 
-#include <task_3/performance.h>
-#include <task_3/participant.h>
+#include <task_4/performance.h>
+#include <task_4/participant.h>
 
 class Competition : public Participant
 {

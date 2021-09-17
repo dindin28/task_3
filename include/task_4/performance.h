@@ -1,7 +1,7 @@
-#ifndef _TASK_3_INCLUDE_TASK_3_PERFORMANCE_H_
-#define _TASK_3_INCLUDE_TASK_3_PERFORMANCE_H_
+#ifndef _TASK_4_INCLUDE_TASK_4_PERFORMANCE_H_
+#define _TASK_4_INCLUDE_TASK_4_PERFORMANCE_H_
 
-#include <task_3/participant.h>
+#include <task_4/participant.h>
 
 class Performance
 {
@@ -10,7 +10,7 @@ public:
   Performance(bool performance_type, Participant participant, int sequence_number, int result);
   Performance(const Performance &copy);
   Performance &operator=(const Performance &copy);
-  ~Performance();
+  virtual ~Performance();
 
   //Getters
   bool GetPerformanceType() const;

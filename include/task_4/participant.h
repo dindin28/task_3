@@ -1,9 +1,9 @@
-#ifndef _TASK_3_INCLUDE_TASK_3_PARTICIPANT_H_
-#define _TASK_3_INCLUDE_TASK_3_PARTICIPANT_H_
+#ifndef _TASK_4_INCLUDE_TASK_4_PARTICIPANT_H_
+#define _TASK_4_INCLUDE_TASK_4_PARTICIPANT_H_
 
 #include <iostream>
 
-#include <task_3/date.h>
+#include <task_4/date.h>
 
 class Participant
 {
